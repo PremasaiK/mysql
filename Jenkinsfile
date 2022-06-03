@@ -32,10 +32,7 @@ pipeline{
 							env.POD_NAME = "${ret2}"
 							echo "env : ${env.POD_NAME}"
 						        if (ret1 == "Running") {
-								ret3 = sh ( script:"ssh premasai@127.0.0.1 kubectl port-forward  ${ret2} :3000 & ",returnStdout: true).trim()
-								sleep 5
 								println "${ret3}"
-								echo " ${ret3} | awk -F'[: ]' 'NR==1{print \$4}' "
 	     							}
 							else {
 								println "${ret1}"
