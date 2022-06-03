@@ -30,7 +30,7 @@ pipeline{
 							println "${ret2}"	
 							echo "came here2 : ${ret2}"
 							env.POD_NAME = "${ret2}"
-							echo "env :" ${env.POD_NAME}
+							echo "env :" env.POD_NAME
 						        if (ret1 == "Running") {
 								println "${ret3}"
 	     							}
@@ -54,3 +54,4 @@ pipeline{
 	}
 
 }
+"
