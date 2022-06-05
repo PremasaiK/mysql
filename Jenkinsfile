@@ -36,11 +36,11 @@ pipeline{
 							env.POD_NAME=ret2
 							echo "4"
 							echo ${env.POD_NAME}
-							if (${ret1} == "Running") {
-								println "${ret3}"
+							if (ret1=="Running") {
+								println ret3
 	     							}
 							else {
-								println "${ret1}"
+								println ret1
 							}
 							}catch(error)
 							{
