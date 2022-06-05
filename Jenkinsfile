@@ -12,7 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t mysql:latest .'
+				sh 'docker build -t mysql:5.6 .'
 			}
 		}
 
@@ -26,7 +26,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push mysql:latest'
+				sh 'docker push mysql:5.6'
 			}
 		}
 
