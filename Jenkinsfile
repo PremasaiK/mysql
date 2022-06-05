@@ -27,10 +27,13 @@ pipeline{
 							ret1 = sh ( script:'ssh premasai@127.0.0.1 kubectl get pods | grep "^mysql*" | awk \'{print $3}\'',returnStdout: true).trim()
 							println ret1
 							ret2 = sh ( script:'ssh premasai@127.0.0.1 kubectl get pods | grep "^mysql*" | awk \'{print $1}\'',returnStdout: true).trim()
+							echo "1"
 							println "${ret2}"
+							echo "2"
 							println ret2
+							echo "3"
 							echo  ret2
-							env.POD_NAME = ${ret2}
+							env.POD_NAME=ret2
 							echo "env : ${env.POD_NAME}"
 							if (${ret1} == "Running") {
 								println "${ret3}"
