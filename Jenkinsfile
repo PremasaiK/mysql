@@ -33,15 +33,6 @@ pipeline{
 							println ret2
 							echo "3"
 							echo  ret2
-							env.POD_NAME=ret2
-							echo "4"
-							echo ${env.POD_NAME}
-							if (ret1=="Running") {
-								println ret3
-	     							}
-							else {
-								println ret1
-							}
 							}catch(error)
 							{
 							 sh 'ssh premasai@127.0.0.1 kubectl create -f deployment.yaml'
