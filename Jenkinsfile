@@ -34,7 +34,8 @@ pipeline{
 							echo "3"
 							echo  ret2
 							env.POD_NAME=ret2
-							echo "env : ${env.POD_NAME}"
+							echo "4"
+							echo ${env.POD_NAME}
 							if (${ret1} == "Running") {
 								println "${ret3}"
 	     							}
