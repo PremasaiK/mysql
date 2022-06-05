@@ -12,7 +12,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t mysql:5.6 .'
+				sh 'docker build -t premasaik/mysql:V1 .'
 			}
 		}
 
@@ -26,7 +26,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push mysql:5.6'
+				sh 'docker push premasaik/mysql:V1'
 			}
 		}
 
