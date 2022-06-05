@@ -9,7 +9,26 @@ pipeline{
 	}
 
 	stages {
+		stage('Build') {
 
+			steps {
+				sh 'docker build -t mysql:latest .'
+			}
+		}
+
+		stage('Login') {
+
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+
+		stage('Push') {
+
+			steps {
+				sh 'docker push mysql:latest'
+			}
+		}
 
 		
 		stage('Deploy to K8s')
