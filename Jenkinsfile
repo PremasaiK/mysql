@@ -39,12 +39,14 @@ pipeline{
 			steps{
 				sshagent(['premasaik-k8s'])
 				{
-					sh 'scp -v -r -o StrictHostKeyChecking=no /home/premasai/mysql/mysql-deployment.yaml premasai@127.0.0.1:/home/premasai'
+					sh 'scp -v -r -o StrictHostKeyChecking=no /home/premasai/mysql/mysql-deployment.yaml /home/premasai/mysql/wordpress-deployment.yaml premasai@127.0.0.1:/home/premasai'
 					
 					script{
 						try{
 							sh 'ssh premasai@127.0.0.1 kubectl apply -f mysql-deployment.yaml'
+							sh 'ssh premasai@127.0.0.1 kubectl apply -f wordpress-deployment.yaml'
 							sh 'ssh premasai@127.0.0.1 kubectl get pods | grep "^mysql*"'
+							sh 'ssh premasai@127.0.0.1 kubectl get pods | grep "^word*"'
 							sleep 5
 							ret1 = sh ( script:'ssh premasai@127.0.0.1 kubectl get pods | grep "^mysql*" | awk \'{print $3}\'',returnStdout: true).trim()
 							println ret1
