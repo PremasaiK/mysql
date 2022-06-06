@@ -13,6 +13,7 @@ pipeline{
 
 			steps {
 				sh 'docker build -t premasaik/mysql:V1 .'
+				sh 'docker build -t premasaik/wordpress:V1 .'
 			}
 		}
 
@@ -27,6 +28,8 @@ pipeline{
 
 			steps {
 				sh 'docker push premasaik/mysql:V1'
+				sh 'docker push premasaik/wordpress:V1'
+				
 			}
 		}
 
