@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - image: premasaik/wordpress:V1
-        name: wordpress
+        name: word-mysql
         env:
         - name: WORDPRESS_DB_HOST
           value: wordpress-mysql
