@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress
+  name: wordp
   labels:
-    app: wordpress
+    app: wordp
 spec:
   selector:
     matchLabels:
-      app: wordpress
+      app: wordp
       tier: frontend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: wordpress
+        app: wordp
         tier: frontend
     spec:
       containers:
@@ -43,13 +43,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress
+  name: wordp
   labels:
-    app: wordpress
+    app: wordp
 spec:
   ports:
     - port: 80
   selector:
-    app: wordpress
+    app: wordp
     tier: frontend
   type: LoadBalancer
