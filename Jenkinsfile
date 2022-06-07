@@ -43,7 +43,7 @@ pipeline{
 					
 					script{
 						try{
-							sh 'ssh premasai@127.0.0.1 kubectl apply apply -k ./'
+							sh 'ssh premasai@127.0.0.1 kubectl apply -k ./'
 							//sh 'ssh premasai@127.0.0.1 kubectl apply -f wordpress-deployment.yaml'
 							sh 'ssh premasai@127.0.0.1 kubectl get pods | grep "^mysql*"'
 							sh 'ssh premasai@127.0.0.1 kubectl get pods | grep "^word*"'
