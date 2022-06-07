@@ -28,7 +28,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress_msql_docker
+  name: wordpress-mysql-docker
   labels:
     app: wordpress
 spec:
