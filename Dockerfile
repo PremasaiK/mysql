@@ -8,7 +8,7 @@
    EXPOSE 3306 
    FROM  wordpress:latest
    VOLUME /var/www/html
-   ENV WORDPRESS_DB_HOST=127.0.0.1
+   ENV WORDPRESS_DB_HOST=127.0.0.1 \
        WORDPRESS_DB_USER=wordpress \
        WORDPRESS_DB_PASSWORD=test1234 \
        WORDPRESS_DB_NAME=wordpress
